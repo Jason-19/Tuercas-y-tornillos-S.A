@@ -1,11 +1,11 @@
 # Tuercas y tornillos S.A.
----
+
 El proyecto consiste en el diseño e implementación de un sistema de base de datos para una ferretería que integre las diferentes áreas operativas. 
 
 Este sistema permitirá registrar y controlar todas las transacciones de la tienda, tanto en punto de venta físico como en una eventual tienda en línea, manteniendo actualizados el inventario y las cuentas de clientes y proveedores. 
 
 # Objetivos
----
+
 
 cada venta reducirá automáticamente el stock, cada compra a proveedor actualizará existencias, y se podrá consultar fácilmente el estado actual del almacén. 
 
@@ -14,7 +14,7 @@ El alcance inicial del proyecto es nacional, aunque el diseño será escalable a
 En resumen, el proyecto pretende modernizar la gestión de la ferretería, ofrecer información precisa en tiempo real y aumentar la competitividad del negocio en el mercado.
 
 # Alcance
----
+
 * Gestión de ventas al detalle, compras a proveedores, inventario de productos, y registros de clientes y proveedores.
 * Se enfocará en las operaciones dentro de Panamá.
 * Se empleará el dólar estadounidense como moneda de transacción.

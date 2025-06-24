@@ -26,4 +26,8 @@ public class CustomerService {
         }
         return customer.toString();
     }
+
+    public CustomerModel getbyId(Long id){
+        return Rep.findById(id).orElse(null);
+    }
 }

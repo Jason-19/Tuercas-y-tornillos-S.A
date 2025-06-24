@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ferreteria.tuercasytornillos.dto.IdResponse;
 import com.ferreteria.tuercasytornillos.model.CustomerModel;
 import com.ferreteria.tuercasytornillos.service.CustomerService;
 
@@ -31,10 +32,17 @@ public class CustomerController {
         return customerService.getAll();
     }
     @PostMapping("/add")
-    public CustomerModel postMethodName(@RequestBody CustomerModel data) {
+    public CustomerModel createCustomer(@RequestBody CustomerModel data) {
      
         customerService.insert_customer(data);
+        System.out.println(customerService.insert_customer(data));
         return data;
     }
+    @PostMapping("/find")
+    public CustomerModel findById(@RequestBody IdResponse id) {
+        
+        return customerService.getbyId(id.getId());
+    }
+    
     
 }

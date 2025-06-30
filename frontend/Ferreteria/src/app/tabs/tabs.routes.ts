@@ -3,34 +3,35 @@ import { TabsPage } from './tabs.page';
 
 export const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'tuercas',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'products',
         loadComponent: () =>
-          import('../tab1/tab1.page').then((m) => m.Tab1Page),
+          import('../modules/products/pages/products-list/products-list.page').then((m) => m.ProductsListPage),
       },
       {
-        path: 'tab2',
+        path: 'details',
         loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+          import('../modules/products/pages/products-details/products-details.page').then((m) => m.ProductsDetailsPage),
       },
       {
-        path: 'tab3',
+        path: 'home',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../modules/home/home.page').then((m) => m.HomePage),
       },
+  
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tuercas/home',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tuercas/home',
     pathMatch: 'full',
   },
 ];

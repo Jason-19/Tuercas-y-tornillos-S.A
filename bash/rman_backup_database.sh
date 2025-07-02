@@ -1,0 +1,3 @@
+rman target /
+RESTORE DATABASE;
+RECOVER DATABASE;

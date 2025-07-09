@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import com.ferreteria.tuercasytornillos.dto.IdResponse;
 import com.ferreteria.tuercasytornillos.model.ProductsModel;
 import com.ferreteria.tuercasytornillos.service.ProductsService;
 
@@ -30,5 +30,23 @@ public class ProductsController {
             return null;
     }
     }
+    @PostMapping("/add")
+    public String addProduct(@RequestBody ProductsModel entity) {
+        try {
+            productsService.insert_product(entity);
+            return entity.toString();
+        } catch (Exception e) {
+            return e.toString();
+        }
+        
+    }
+
+    @PostMapping("/find")
+    public ProductsModel findProducts(@RequestBody IdResponse entity) {
+        
+        return productsService.getbyId(entity.getId());
+    }
+    
+    
     
 }

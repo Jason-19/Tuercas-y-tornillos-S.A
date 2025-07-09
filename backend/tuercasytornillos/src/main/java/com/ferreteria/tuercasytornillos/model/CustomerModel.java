@@ -12,38 +12,26 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "CUSTOMERS")
+@Table(name = "CLIENTE")
 public class CustomerModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IDCUSTOMER")
+    @Column(name = "IDCLIENTE")
     @Schema(example = "1")
     private Long id;
     
-    @Column(name = "name")
+    @Column(name = "NOMBRE")
     @Schema(example = "John Doe")
     private String first_name;
 
-    @Column(name = "email")
+    @Column(name = "EMAIL")
     @Schema(example = "jason@example.com")
     private String email;
 
-    @Column(name = "phone")
+    @Column(name = "TELEFONO")
     @Schema(example = "1234567890")
     private String phone;
-
-    @Column(name = "address")
-    @Schema(example = "Calle 123")
-    private String address;
-
-    @Column(name = "created_at")
-    @Schema(example = "2023-01-01")
-    private String created_at;
-
-    @Column(name = "updated_at")
-    @Schema(example = "2023-01-01")
-    private String updated_at;
 
     public long getId() {
         return id;

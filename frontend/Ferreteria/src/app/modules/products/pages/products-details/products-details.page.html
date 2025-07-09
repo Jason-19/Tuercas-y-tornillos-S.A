@@ -1,9 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Products</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalle de Producto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  
+<ion-content class="ion-padding">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 89%)">
+    <div class="container">
+
+      <form>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" [value]="product.name"/>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Precio Unitario</label>
+            <input type="number" class="form-control"  [value]="product.price" />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" rows="7" [value]="product.descripcion"></textarea>
+        </div>
+
+
+        <ion-button expand="full" color="success">Guardar</ion-button>
+      </form>
+    </div>
+  </div>
 </ion-content>

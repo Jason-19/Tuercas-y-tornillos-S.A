@@ -5,9 +5,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-3 m-3 ">
 
+    <button type="button" class="btn btn-success" (click)="createProduct()">Nuevo</button>
+  </div>
   <ion-list [inset]="true">
-    <ion-item [button]="true" detail="false" *ngFor="let p of products">
+    <ion-item [button]="true" detail="false" *ngFor="let p of products" (click)="productDetail(p.id)">
 
       <ion-label>{{ p.id}}</ion-label>
       <ion-label>

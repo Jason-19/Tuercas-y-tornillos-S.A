@@ -8,11 +8,10 @@
 * @version 1.0
 */
 
-CREATE TABLE TORNILLOS.TORNILLOS.Pais (
+CREATE TABLE TORNILLOS.Pais (
     idPais NUMBER PRIMARY KEY,
     nombre VARCHAR2(100) NOT NULL
 );
-INSERT INTO Pais (idPais, nombre) VALUES (1, 'PANAMA');
 
 
 CREATE TABLE TORNILLOS.Provincia (
@@ -114,6 +113,7 @@ CREATE TABLE TORNILLOS.Producto (
     idMarca NUMBER REFERENCES MarcaProducto(idMarca),
     idUnidad NUMBER REFERENCES UnidadMedida(idUnidad)
 );
+ALTER TABLE "PRODUCTO" ADD IMAGE_URL VARCHAR2(255);
 
 CREATE TABLE TORNILLOS.PrecioProducto (
     idPrecio NUMBER PRIMARY KEY,

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, } from '@angular/forms';
+import { FormsModule, FormGroup,FormBuilder,ReactiveFormsModule} from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList,IonItem, IonLabel} from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
 import type { Product } from '../../models/producto.model';
-
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-products-list',
@@ -20,18 +20,25 @@ import type { Product } from '../../models/producto.model';
     FormsModule,
     IonList,
     IonItem,
-    IonLabel
+    IonLabel,
+    ReactiveFormsModule
 
 
   ]
 })
 export class ProductsListPage implements OnInit {
 
+  
   products: Product[] = [];
   loading: boolean = true;
   searchValue: string | undefined;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(
+    private productsService: ProductsService, 
+    private router: Router, 
+    private formBuilder: FormBuilder
+   
+  ) { }
 
   ngOnInit() {
     this.getProducts();
@@ -49,6 +56,14 @@ export class ProductsListPage implements OnInit {
     });
   }
 
+  createProduct() {
+    this.router.navigate(['/tuercas/products/create']);
 
+    
+  }
+
+  productDetail(id: number) {
+    this.router.navigate(['/tuercas/products/details', id]);
+  }
 
 }

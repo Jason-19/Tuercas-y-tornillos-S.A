@@ -13,13 +13,8 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./auth/register/register.page').then( m => m.RegisterPage)
   },
-  // {
-  //   path: 'products-list',
-  //   loadComponent: () => import('./modules/products/pages/products-list/products-list.page').then( m => m.ProductsListPage)
-  // },
-  // {
-  //   path: 'products-details',
-  //   // loadComponent: () => import('./modules/products/pages/products-details/products-details.page').then( m => m.ProductsDetailsPage)
-  // }
-
+  {
+    path: 'card',
+    loadComponent: () => import('./modules/products/components/produts-card/produts-card.component').then( m => m.ProdutsCardComponent)
+  }
 ];

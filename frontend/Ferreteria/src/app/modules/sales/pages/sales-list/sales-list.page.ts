@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-sales-list',
+  templateUrl: './sales-list.page.html',
+  // styleUrls: ['./sales-list.page.scss'],
   standalone: true,
-  imports: [IonContent,CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class LoginPage implements OnInit {
+export class SalesListPage implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  createSale() {
+    
+  }
 }

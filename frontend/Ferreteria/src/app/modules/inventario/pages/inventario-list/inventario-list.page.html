@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inventario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-3 m-3 ">
+      <button type="button" class="btn btn-success" (click)="createProduct()">Nuevo Producto</button>
+      <button type="button" class="btn btn-success">Nuevo Proveedor</button>
+    </div>
+    <ion-list [inset]="true">
+      <ion-item [button]="true" detail="false" *ngFor="let p of products" (click)="productDetail(p.id)">
+        
+        <ion-label>{{ p.id}}</ion-label>
+        <ion-label>
+          <strong>{{ p.name }}</strong>
+        </ion-label>
+        <ion-label>{{ p.stock}}</ion-label>
+        
+        <ion-label color="medium" slot="end">{{ p.price }} $</ion-label>
+        
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

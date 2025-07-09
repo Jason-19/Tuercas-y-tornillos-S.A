@@ -4,13 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-customer-card',
+  templateUrl: './customer-card.page.html',
   standalone: true,
-  imports: [IonContent,CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class LoginPage implements OnInit {
+export class CustomerCardPage implements OnInit {
 
   constructor() { }
 

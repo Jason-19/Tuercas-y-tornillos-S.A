@@ -1,41 +1,30 @@
 package com.ferreteria.tuercasytornillos.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 import lombok.Data;
 
 @Entity
-@Table(name = "supplier")
+@Table(name = "PROVEEDOR")
 @Data
 public class SupplierModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idSupplier")
-    private Long id; // pk
+    @Column(name = "IDPROVEEDOR")
+    private Long id; 
 
-    @Column(name = "name")
+    @Column(name = "NOMBRE")
     private String name;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "CONTACTO")
+    private String contact;
 
-    @Column(name = "phone")
-    private String phone;
-
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "created_at")
-    private String created_at;
-    
-    @Column(name = "updated_at")
-    private String updated_at;
 }
 
 

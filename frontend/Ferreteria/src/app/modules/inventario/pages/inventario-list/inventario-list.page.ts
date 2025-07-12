@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonLabel,IonBreadcrumb, 
+  IonBreadcrumbs,IonIcon,IonBackButton, IonButtons,IonNote
+} from '@ionic/angular/standalone';
 import { InventarioService } from '../../services/inventario.service';
 import type { Product } from 'src/app/modules/products/models/producto.model';
 import { Router } from '@angular/router';
@@ -10,7 +12,12 @@ import { Router } from '@angular/router';
   selector: 'app-inventario-list',
   templateUrl: './inventario-list.page.html',
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ReactiveFormsModule, IonList, IonItem, IonLabel]
+  imports: [IonContent, IonHeader, IonTitle, 
+    IonToolbar, CommonModule, FormsModule, 
+    ReactiveFormsModule, IonList, IonItem, 
+    IonLabel,IonBreadcrumb, IonBreadcrumbs,IonIcon,
+    IonButtons,IonBackButton,IonNote
+  ]
 })
 export class InventarioListPage implements OnInit {
 

@@ -10,30 +10,23 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "detail_sales")
+@Table(name = "DETALLEVENTA")
 public class DetailSalesModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idDetailSales")
+    @Column(name = "IDDETALLEVENTA")
     private Long id;
 
-    @Column(name = "idSales")
+    @Column(name = "IDVENTA")
     private Long idSales;
 
-    @Column(name = "idProduct")
+    @Column(name = "IDPRODUCTO")
     private Long idProduct;
 
-    @Column(name = "quantity")
+    @Column(name = "CANTIDAD")
     private Integer quantity;
 
-    @Column(name = "price")
+    @Column(name = "PRECIOUNITARIO")
     private Double price;
-
-
-    @Column(name = "created_at")
-    private String created_at;
-
-    @Column(name = "updated_at")
-    private String updated_at;
 }

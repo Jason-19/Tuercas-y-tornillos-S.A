@@ -13,7 +13,7 @@
   </symbol>
 </svg>
 
-<ion-header>
+<ion-header  class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -21,7 +21,12 @@
     <ion-title>Registrar Producto</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content class="ion-padding">
+  <ion-breadcrumbs>
+  <ion-breadcrumb href="/tuercas/home"><ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+  <ion-breadcrumb href="/tuercas/inventario/list">Inventario</ion-breadcrumb>
+  <ion-breadcrumb href="/tuercas/products/create">Create</ion-breadcrumb>
+</ion-breadcrumbs>
   @if (success) {
   <div class="alert alert-success d-flex align-items-center position-absolute top-0 end-0 m-4" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
@@ -32,7 +37,7 @@
     </div>
   </div>
   }
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 89%)">
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" >
 
     <div class="container">
 

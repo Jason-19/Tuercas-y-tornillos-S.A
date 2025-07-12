@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton,IonBreadcrumb, IonBreadcrumbs,IonIcon} from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './products-details.page.html',
   styleUrls: [],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonBreadcrumb, IonBreadcrumbs,IonIcon]
 })
 export class ProductsDetailsPage implements OnInit {
   product: any = {};

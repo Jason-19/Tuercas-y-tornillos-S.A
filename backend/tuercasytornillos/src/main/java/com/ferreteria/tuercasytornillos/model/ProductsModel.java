@@ -57,5 +57,9 @@ public class ProductsModel {
     @Column(name = "IDUNIDAD")
     @Schema(example = "1")
     private Long idUnidad;
+
+    @Column(name = "IMAGE_URL")
+    @Schema(example = "imagen.jpg")
+    private String imageUrl;
     
 }

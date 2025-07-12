@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data   
 @Entity
-@Table(name = "EMPLOYEES")
+@Table(name = "EMPLEADO")
 public class EmployeeModel {
     
     @Id
@@ -21,32 +21,27 @@ public class EmployeeModel {
     @Schema(example = "1")
     private Long id;
     
-    @Column(name = "name")
+    @Column(name = "NOMBRE")
     @Schema(example = "John Doe")
     private String name;
 
-    @Column(name = "role")
+    @Column(name = "PUESTO")
     @Schema(example = "admin")
     private String role;
 
-    @Column(name = "password_hash")
-    @Schema(example = "admin")
-    private String password;
+    @Column(name = "SALARIO")
+    @Schema(example = "1000")
+    private Double salary;
+
+    @Column(name = "FECHAINGRESO")
+    @Schema(example = "2022-01-01")
+    private String date_of_entry;
     
-    @Column(name = "email")
-    @Schema(example = "john@example.com")
-    private String email;
+    @Column(name = "IDSUCURSAL")
+    @Schema(example = "1")
+    private Long idBranch;
 
-    @Column(name = "phone")
-    @Schema(example = "1234567890")
-    private String phone;
-   
-    @Column(name = "created_at")
-    @Schema(example = "2023-01-01")
-    private String created_at;
-
-    @Column(name = "updated_at")
-    @Schema(example = "2023-01-01")
-    private String updated_at;
-
+    @Column(name = "IDUSUARIO")
+    @Schema(example = "1")
+    private Long idUser;
 }

@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-
+import { IonContent, IonHeader, IonTitle, IonToolbar ,IonBreadcrumb, IonBreadcrumbs,IonIcon,IonLabel} from '@ionic/angular/standalone';
+import { CurrentUserService } from 'src/services/currentUser/current-user.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonBreadcrumb, IonBreadcrumbs,IonIcon,IonLabel]
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
-
+  currentUser: any = this.currentUserService.getCurrentUserID();
+  constructor( 
+    private currentUserService: CurrentUserService
+  ) { }
   ngOnInit() {
   }
 

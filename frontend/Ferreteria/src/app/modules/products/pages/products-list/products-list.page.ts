@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup,FormBuilder,ReactiveFormsModule} from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonList,IonItem, IonLabel} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar,IonBreadcrumb, IonBreadcrumbs,IonIcon} from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
 import type { Product } from '../../models/producto.model';
 import { Router} from '@angular/router';
@@ -18,10 +18,10 @@ import { Router} from '@angular/router';
     IonToolbar,
     CommonModule,
     FormsModule,
-    IonList,
-    IonItem,
-    IonLabel,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonBreadcrumb,
+    IonBreadcrumbs,
+    IonIcon
 
 
   ]

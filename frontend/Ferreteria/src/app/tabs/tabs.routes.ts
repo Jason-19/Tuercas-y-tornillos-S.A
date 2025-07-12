@@ -56,7 +56,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tuercas/home',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
 ];

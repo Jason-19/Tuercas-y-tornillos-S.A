@@ -1,35 +1,56 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Detalle de Producto</ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>{{ product.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 89%)">
+<ion-content class="ion-padding" fullscreen="true">
+  <ion-breadcrumbs>
+  <ion-breadcrumb href="/tuercas/home"> <ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+  <ion-breadcrumb href="/tuercas/products">Productos</ion-breadcrumb>
+</ion-breadcrumbs>
+  <div class="px-4 py-5 px-md-4 text-center text-lg-start">
     <div class="container">
-
       <form>
-        <div class="row">
+        <div class="row align-items-start">
+
           <div class="col-md-6 mb-4">
-            <div class="mb-3">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" [value]="product.name"/>
+            <div class="row">
+              <div class="col-md-6 mb-3 ">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" [value]="product.name" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Precio Unitario</label>
+                <input type="number" class="form-control" [value]="product.price" />
+              </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Stock</label>
+                <input type="number" class="form-control" [value]="product.stock" />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Proveedor</label>
+                <input type="text" class="form-control" [value]="product.idProveedor" />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" rows="6" [value]="product.descripcion"></textarea>
+            </div>
+
+            <ion-button expand="block" color="success">Guardar</ion-button>
           </div>
-          <!--  -->
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Precio Unitario</label>
-            <input type="number" class="form-control"  [value]="product.price" />
+
+          
+          <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+            <img [src]="product.imageUrl" class="img-fluid rounded shadow" style="max-height: 400px;" alt="imagen del producto">
           </div>
+
         </div>
-
-        <div class="mb-3">
-          <label class="form-label">Descripción</label>
-          <textarea class="form-control" rows="7" [value]="product.descripcion"></textarea>
-        </div>
-
-
-        <ion-button expand="full" color="success">Guardar</ion-button>
       </form>
     </div>
   </div>

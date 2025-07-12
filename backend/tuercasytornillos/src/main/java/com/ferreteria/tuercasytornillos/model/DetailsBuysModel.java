@@ -10,31 +10,25 @@ import javax.persistence.GenerationType;
 import lombok.Data;
 
 @Entity
-@Table(name = "details_buys")
+@Table(name = "DETALLECOMPRA")
 @Data
 public class DetailsBuysModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idDetailBuy")
+    @Column(name = "IDDETALLECOMPRA")
     private Long id;
     
-    @Column(name = "idBuy")
+    @Column(name = "IDCOMPRA")
     private Long idBuy;
 
-    @Column(name = "idProduct")
+    @Column(name = "IDPRODUCTO")
     private Long idProduct;
 
-    @Column(name = "quantity")
+    @Column(name = "CANTIDAD")
     private Integer quantity;
 
-    @Column(name = "price")
+    @Column(name = "COSTOUNITARIO")
     private Double price;
-
-    @Column(name = "created_at")
-    private String created_at;
-
-    @Column(name = "updated_at")
-    private String updated_at;
     
 }

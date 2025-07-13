@@ -31,4 +31,13 @@ public class ProductsService {
     public ProductsModel getbyId(Long id){
         return rProd.findById(id).orElse(null);
     }
+    
+    public String update_product(ProductsModel product){
+        try {
+            rProd.save(product);
+        } catch (Exception e) {
+            return e.toString();
+        }
+        return product.toString();
+    }
 }

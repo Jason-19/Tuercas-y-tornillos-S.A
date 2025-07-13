@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
-    <ion-title>sales-list</ion-title>
+    <ion-title>VENTAS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-breadcrumbs>
+      <ion-breadcrumb href="/tuercas/home"><ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+      <ion-breadcrumb href="/tuercas/sales/list">Ventas</ion-breadcrumb>
+    </ion-breadcrumbs>
   <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-3 m-3 ">
 
-    <button type="button" class="btn btn-dark" (click)="createSale()">Nuevo Venta</button>
+    <button type="button" class="btn btn-warning" (click)="createSale()">Nuevo Venta</button>
   </div>
   <table class="table table-hover text-nowrap">
   <thead>

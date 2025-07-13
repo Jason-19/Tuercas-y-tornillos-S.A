@@ -17,6 +17,10 @@ export const routes: Routes = [
           import('../modules/products/pages/products-details/products-details.page').then((m) => m.ProductsDetailsPage),
       },
       {
+        path: 'products/card/:id',
+        loadComponent: () => import('../modules/products/components/produts-card/produts-card.component').then( m => m.ProdutsCardComponent)
+      },
+      {
         path: 'products/create',
         loadComponent: () =>
           import('../modules/products/components/produts-form/produts-form.component').then((m) => m.ProdutsFormComponent),
@@ -56,7 +60,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tuercas/home',
+    redirectTo: '/login',
     pathMatch: 'full',
   },
 ];

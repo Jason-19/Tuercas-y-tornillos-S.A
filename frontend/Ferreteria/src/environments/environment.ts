@@ -1,6 +1,6 @@
 
 export const environment = {
   production: false,
-  url: "http://localhost:8080/"
+  api: "http://192.168.0.6:8080"
 };
 

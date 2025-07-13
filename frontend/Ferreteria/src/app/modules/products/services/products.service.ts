@@ -28,4 +28,8 @@ export class ProductsService {
   detailProduct(data: any) : Observable<Product> {
     return this.http.post<any>(`${this.apiURL}/find`,data);
   }
+
+  update_product(data: any) : Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/update`,data);
+  }
 }

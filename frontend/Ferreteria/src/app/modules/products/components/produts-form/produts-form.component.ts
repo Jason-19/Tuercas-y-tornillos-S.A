@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBackButton, IonButtons } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBackButton, IonButtons,IonBreadcrumb, IonBreadcrumbs, IonIcon} from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
 @Component({
   selector: 'app-produts-form',
   templateUrl: './produts-form.component.html',
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, ReactiveFormsModule, FormsModule, IonBackButton, IonButtons, CommonModule],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButton, ReactiveFormsModule, FormsModule, IonBackButton, IonButtons, CommonModule, IonBreadcrumb, IonBreadcrumbs, IonIcon],
 })
 export class ProdutsFormComponent implements OnInit {
   proveedores: any[] = [];

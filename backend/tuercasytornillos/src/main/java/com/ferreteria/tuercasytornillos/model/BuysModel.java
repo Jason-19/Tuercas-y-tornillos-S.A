@@ -11,29 +11,23 @@ import lombok.Data;
 
 @Data   
 @Entity
-@Table(name = "buys")
+@Table(name = "COMPRA")
 public class BuysModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idBuy")
+    @Column(name = "IDCOMPRA")
     private Long id;
 
-    @Column(name = "date")
+    @Column(name = "FECHA")
     private String date;
 
-    @Column(name = "total")
+    @Column(name = "TOTAL")
     private Double total;
 
-    @Column(name = "idSupplier")
+    @Column(name = "IDPROVEEDOR")
     private Long idSupplier;
 
-    @Column(name = "idEmployee")
-    private Long idEmployee;
-
-    @Column(name = "created_at")
-    private String created_at;
-    
-    @Column(name = "updated_at")
-    private String updated_at;
+    @Column(name = "IDUSUARIO")
+    private Long idUser;
 }

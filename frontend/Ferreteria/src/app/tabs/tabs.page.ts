@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 })
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
-  public userLoggedIn : boolean = false;
+  public userLoggedIn : boolean = true;
   constructor() {
   }
 }

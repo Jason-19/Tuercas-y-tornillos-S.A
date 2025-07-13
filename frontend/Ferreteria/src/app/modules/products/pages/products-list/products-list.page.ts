@@ -63,7 +63,7 @@ export class ProductsListPage implements OnInit {
   }
 
   productDetail(id: number) {
-    this.router.navigate(['/tuercas/products/details', id]);
+    this.router.navigate(['/tuercas/products/card', id]);
   }
 
 }

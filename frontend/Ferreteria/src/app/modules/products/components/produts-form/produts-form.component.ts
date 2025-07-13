@@ -62,7 +62,7 @@ this.productsService.getProveedor({}).subscribe(data => {
 
   createProduct() {
     console.log(this.newProduct.value);
-    // this.productsService.createProduct(this.newProduct.value).subscribe();
+    this.productsService.createProduct(this.newProduct.value).subscribe();
     this.success = true
     setTimeout(() => {
       this.success = false

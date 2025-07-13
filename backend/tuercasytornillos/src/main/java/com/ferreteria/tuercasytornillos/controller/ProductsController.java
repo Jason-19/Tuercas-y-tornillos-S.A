@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.ferreteria.tuercasytornillos.dto.IdResponse;
 import com.ferreteria.tuercasytornillos.model.ProductsModel;
 import com.ferreteria.tuercasytornillos.service.ProductsService;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 
 @RestController
@@ -46,7 +48,15 @@ public class ProductsController {
         
         return productsService.getbyId(entity.getId());
     }
+    @PutMapping("/update")
+    public String update(@RequestBody ProductsModel entity) {
+        return productsService.update_product(entity);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody IdResponse id) {
     
+    }
     
     
 }

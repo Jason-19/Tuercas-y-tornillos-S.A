@@ -1,32 +1,111 @@
-<div class="card-group">
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+<!-- <ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>{{ product.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen="true">
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/tuercas/home"> <ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+    <ion-breadcrumb href="/tuercas/products">Productos</ion-breadcrumb>
+    <ion-breadcrumb href="/tuercas/products">{{ product.name }}</ion-breadcrumb>
+  </ion-breadcrumbs>
+  <div class="px-4 py-5 px-md-4 text-center text-lg-start">
+    <div class="container">
+      <form>
+        <div class="row align-items-start">
+
+          <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+            <img [src]="product.imageUrl" class="img-fluid rounded shadow" style="max-height: 400px;"
+              alt="imagen del producto">
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="row">
+
+              <div class="col-md-6 mb-3 ">
+                <h1 class="form-label">{{ product.name }}</h1>
+                <div class="mb-3">
+                  <p>{{product.descripcion}}</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-6 mb-3">
+                <h2>{{ product.price }} $</h2>
+              </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <h3>Stock: {{ product.stock }}</h3>
+              </div>
+            </div>
+
+
+            <ion-button  color="success">-</ion-button>
+            <ion-input type="number"  [value]="cantidad" [disabled]="true"></ion-input>
+            <ion-button  color="success">+</ion-button>
+            <ion-button  color="success">Añadir</ion-button>
+          </div>
+
+        </div>
+
+      </form>
     </div>
   </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-</div>
+</ion-content> -->
+
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>{{ product.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/tuercas/home">
+      <ion-icon slot="start" name="home"></ion-icon> Home
+    </ion-breadcrumb>
+    <ion-breadcrumb href="/tuercas/products">Productos</ion-breadcrumb>
+    <ion-breadcrumb>{{ product.name }}</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <ion-grid class="ion-padding">
+    <ion-row class="ion-align-items-center">
+
+     
+      <!-- <ion-col size="12" size-md="6" class="ion-text-center">
+        <ion-img [src]="product.imageUrl" alt="imagen del producto" style="max-height: 300px; object-fit: contain;" class="ion-margin-bottom"></ion-img>
+      </ion-col> -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center mb-4">
+            <img [src]="product.imageUrl" class="img-fluid rounded shadow" style="max-height: 400px;"
+              alt="imagen del producto">
+          </div>
+     
+      <ion-col size="12" size-md="6">
+        <h2 class="ion-text-capitalize">{{ product.name }}</h2>
+        <p class="ion-margin-bottom">{{ product.descripcion }}</p>
+        
+        <h3 class="ion-text-bold ion-margin-bottom">{{ product.price }} $</h3>
+        <p><strong>Stock:</strong> {{ product.stock }}</p>
+
+        <ion-item lines="none" class="ion-margin-vertical">
+          <ion-buttons slot="start">
+            <ion-button color="success" (click)="decrement()">-</ion-button>
+          </ion-buttons>
+
+          <ion-input type="number" [value]="cantidad" disabled class="ion-text-center"></ion-input>
+
+          <ion-buttons slot="end">
+            <ion-button color="success" (click)="increment()">+</ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <ion-button expand="block" color="success" (click)="buy()" [disabled]="cantidad==0">
+          Comprar
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -8,10 +8,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+
     <ion-breadcrumbs>
     <ion-breadcrumb href="/tuercas/home"><ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
     <ion-breadcrumb href="/tuercas/customer/list">Clientes</ion-breadcrumb>
     </ion-breadcrumbs>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start m-3">
+      <button type="button" class="btn btn-warning">Nuevo Cliente</button>
+    </div>
   <ion-list lines="none">
     <ion-item *ngFor="let customer of customers" class="ion-align-items-start">
 

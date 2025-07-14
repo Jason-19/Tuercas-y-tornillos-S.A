@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.data.repository.query.Param;
 
 import com.ferreteria.tuercasytornillos.dto.IdResponse;
 import com.ferreteria.tuercasytornillos.model.CustomerModel;
@@ -42,6 +43,12 @@ public class CustomerController {
     public CustomerModel findById(@RequestBody IdResponse id) {
         
         return customerService.getbyId(id.getId());
+    }
+
+     @PostMapping("/delete/{id}")
+    public Long delete(@Param("id") Long id) {
+        customerService.delete_customer(id);
+        return id;
     }
     
     

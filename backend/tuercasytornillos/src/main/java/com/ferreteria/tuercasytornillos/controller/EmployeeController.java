@@ -1,15 +1,12 @@
 package com.ferreteria.tuercasytornillos.controller;
 
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import com.ferreteria.tuercasytornillos.dto.IdResponse;
 import com.ferreteria.tuercasytornillos.model.EmployeeModel;
 import com.ferreteria.tuercasytornillos.service.EmployeeService;

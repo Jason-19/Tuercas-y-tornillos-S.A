@@ -1,16 +1,20 @@
 package com.ferreteria.tuercasytornillos.controller;
 import com.ferreteria.tuercasytornillos.dto.RegisterDTO;
-import com.ferreteria.tuercasytornillos.service.CustomerService;
+import com.ferreteria.tuercasytornillos.model.UserModel;
 import com.ferreteria.tuercasytornillos.dto.LoginDTO;
 import com.ferreteria.tuercasytornillos.dto.AuthResponse;
 import com.ferreteria.tuercasytornillos.utils.JwtUtil;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.ferreteria.tuercasytornillos.service.AuthService;
+
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -20,17 +24,18 @@ import jakarta.validation.Valid;
 @RequestMapping("/auth")
 public class Auth {
    
-    
+    @Autowired
+    private AuthService userService;
     
     @PostMapping("/login")
     public ResponseEntity<? > login(@RequestBody @Valid LoginDTO data){
-        JwtUtil.setToken(data);
-        System.out.println(data);
-        String user = data.getUsername();
-        String password = data.getPassword();
-
-         if (user.equals("admin") && password.equals("admin")) {
-            return ResponseEntity.ok( new AuthResponse(JwtUtil.getToken()) );
+       Optional<UserModel> userOpt = userService.authenticate(data.getUsername(), data.getPassword());
+    
+        if (userOpt.isPresent()) {
+            UserModel user = userOpt.get();
+            System.out.println(user);
+            JwtUtil.setToken(user.getId().toString(), user.getRole().getId().toString());
+            return ResponseEntity.ok(new AuthResponse(JwtUtil.getToken()));
         } else {
             return ResponseEntity.status(401).body("Credenciales incorrectas");
         }

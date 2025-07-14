@@ -81,12 +81,11 @@ export class ProductsDetailsPage implements OnInit {
         }
       });
     });
-  }
 
+  }
   editProduct() {
     this.enabled = false;
   }
-
   updateProduct() {
     this.productsService.update_product(this.newProduct.value).subscribe(
       (data) => {
@@ -142,4 +141,5 @@ export class ProductsDetailsPage implements OnInit {
       },
     },
   ];
+
 }

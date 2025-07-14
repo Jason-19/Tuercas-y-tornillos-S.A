@@ -34,5 +34,5 @@ export class ProductsService {
   // proveedores
   getProveedor(data: any) : Observable<Product[]> {
     return this.http.post<Product[]>(`${environment.api}/supplier/all`, data);
-  }
+
 }

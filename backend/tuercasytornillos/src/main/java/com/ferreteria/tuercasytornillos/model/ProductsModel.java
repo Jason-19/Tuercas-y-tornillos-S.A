@@ -61,7 +61,7 @@ public class ProductsModel {
     @Column(name = "IMAGE_URL")
     @Schema(example = "imagen.jpg")
     private String imageUrl;
-
+  
     @Column(name = "STATUS")
     @Schema(example = "A")
     private String status;

@@ -13,6 +13,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
+
 @RestController
 @RequestMapping("/sales")
 @Tag(name = "Ventas", description = "Operaciones relacionadas con las ventas")

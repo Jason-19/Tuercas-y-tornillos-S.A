@@ -24,15 +24,15 @@ export class LoginPage implements OnInit {
     private currentUserService: CurrentUserService,
     private authService: AuthService
   ) {
+
     this.loginForm = this.fb.group({
       username: ["", [Validators.required]],
       password: ["", [Validators.required]]
     })
   }
-
   ngOnInit() {
-  }
 
+  }
   login() {
     const { username, password } = this.loginForm.value
     console.log(username, password);
@@ -55,4 +55,5 @@ export class LoginPage implements OnInit {
 
 
   }
+
 }

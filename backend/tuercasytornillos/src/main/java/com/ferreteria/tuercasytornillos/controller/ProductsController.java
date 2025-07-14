@@ -53,6 +53,7 @@ public class ProductsController {
         return productsService.getbyId(entity.getId());
     }
 
+
     @PutMapping("/update")
     public ResponseEntity<?> update_product(@RequestBody ProductsModel product) {
         try {
@@ -76,5 +77,6 @@ public class ProductsController {
         return productsService.stockFull();
 
     }
+
 
 }

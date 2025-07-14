@@ -2,6 +2,7 @@ import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel} from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { CurrentUserService } from 'src/services/currentUser/current-user.service';
 
 @Component({
   selector: 'app-tabs',
@@ -12,6 +13,8 @@ import { NgIf } from '@angular/common';
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
   public userLoggedIn : boolean = true;
-  constructor() {
+  constructor(
+    public currentUserService: CurrentUserService
+  ) {
   }
 }

@@ -1,97 +1,39 @@
-<!-- 
+<ion-content [fullscreen]="true" class="ion-padding"
+  style="--background: url('../../../assets/background.jpg') no-repeat center/cover;">
 
-<ion-content [fullscreen]="true">
+  <div style="display: flex; justify-content: center; align-items: center; min-height: 100% ">
 
-<section class="p-5" style="background-image: url('../../../assets/background.jpg'); background-repeat: no-repeat; background-size: cover; ">
-  <h1 class="text-lg-start text-white text-uppercase fw-bold" style="font-size: 70px;">Tuercas y Tornillos S.A</h1>
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start ">
-    <div class="container">
-      <div class="row gx-lg-5 align-items-center">
-        <div class="col-lg-6 mb-xl-4 ">
-          <div class="card">
-            <div class="card-body py-5 px-md-5">
-              <form [formGroup]="loginForm" >
-              
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="email" id="f1" class="form-control" formControlName="email"/>
-                  <label class="form-label" for="f1">Email address</label>
-                </div>
+    <ion-card class="ion-padding ion-text-center  " style="width: 100%; max-width:600px; border-radius: 20px;">
+      <h1 class="ion-margin-top" style="font-size: 30px; color: #000000">Tuercas y Tornillos S.A.</h1>
+      <ion-card-header>
+        <ion-card-title>Iniciar Sesión</ion-card-title>
+      </ion-card-header>
 
-                
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text"  class="form-control" formControlName="password"/>
-                  <label class="form-label">Password</label>
-                </div>
+      <ion-card-content>
+        <form [formGroup]="loginForm">
 
-                
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                  <label class="form-check-label" for="form2Example33">
-                    Remember me
-                  </label>
-                </div>
-                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" (click)="login()">
-                  Sign up
-                </button>
-              </form>
-            </div>
-          </div>
-      </div>
-      <div class="col-lg-4 mb-xl-4">
-          <img src="../../../assets/tornillo.png"
-            class="img-fluid" alt="Sample image">
-        </div>
-      
-      </div>
-    </div>
+          <ion-item>
+            <ion-input type="text" formControlName="username" label="Username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input type="password" label="Password" formControlName="password">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-checkbox slot="start" checked></ion-checkbox>
+            <ion-label>Recordarme</ion-label>
+          </ion-item>
+
+          <ion-button expand="block" class="ion-margin-top" (click)="login()">
+            Iniciar sesión
+          </ion-button>
+
+        </form>
+      </ion-card-content>
+    </ion-card>
   </div>
-
-</section>
-</ion-content> -->
-<ion-content [fullscreen]="true" class="ion-padding" style="--background: url('../../../assets/background.jpg') no-repeat center/cover;">
-
-  <ion-grid class="ion-text-center ion-justify-content-center">
-    <ion-row class="ion-align-items-center" style="min-height: 100vh;">
-      <ion-col size="12" size-md="6" class="ion-padding">
-
-        <h1 class="text-white ion-margin-bottom" style="font-size: 30px;">Tuercas y Tornillos S.A.</h1>
-
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Iniciar Sesión</ion-card-title>
-          </ion-card-header>
-
-          <ion-card-content>
-            <form [formGroup]="loginForm">
-
-              <ion-item>
-                <ion-label position="floating">Usuario</ion-label>
-                <ion-input type="text" formControlName="username"></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label position="floating">Contraseña</ion-label>
-                <ion-input type="password" formControlName="password"></ion-input>
-              </ion-item>
-
-              <ion-item lines="none">
-                <ion-checkbox slot="start" checked></ion-checkbox>
-                <ion-label>Recordarme</ion-label>
-              </ion-item>
-
-              <ion-button expand="block" class="ion-margin-top" (click)="login()">
-                Iniciar sesión
-              </ion-button>
-
-            </form>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="12" size-md="6" class="ion-hide-sm-down">
-        <img src="../../../assets/tornillo.png" class="img-fluid" alt="Imagen" style="max-width: 70%; margin: auto;" />
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonHeader, IonToolbar, IonBreadcrumb, IonBreadcrumbs, IonTitle, IonContent, IonIcon, IonButton, IonInput, IonCol, IonGrid, IonItem, IonButtons, IonImg, IonRow } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonBreadcrumb, IonBreadcrumbs, IonTitle, IonContent, IonIcon, IonButton, IonInput, IonCol, IonGrid, IonItem, IonButtons, IonRow } from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './produts-card.component.html',
   standalone: true,
   imports: [CommonModule, IonHeader, IonToolbar, IonBreadcrumb, IonBreadcrumbs,
-    IonTitle, IonContent, IonIcon, IonButton, IonInput, IonCol, IonGrid, IonItem, IonButtons, IonImg, IonRow],
+    IonTitle, IonContent, IonIcon, IonButton, IonInput, IonCol, IonGrid, IonItem, IonButtons, IonRow],
 })
 export class ProdutsCardComponent implements OnInit {
 

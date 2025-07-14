@@ -10,9 +10,9 @@
       <ion-label>Productos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="inventory" routerLink="/tuercas/inventario/list">
+    <ion-tab-button tab="inventory" routerLink="/tuercas/inventario/list" *ngIf="currentUserService.isAdmin()">
       <ion-icon name="checkbox-outline"></ion-icon>
-
+      
       <ion-label>Inventario</ion-label>
     </ion-tab-button>
 
@@ -22,15 +22,20 @@
     </ion-tab-button>
 
 
-    <ion-tab-button tab="purchases" routerLink="/tuercas/purchases">
+    <ion-tab-button tab="purchases" routerLink="/tuercas/purchases" *ngIf="currentUserService.isAdmin()">
       <ion-icon name="basket-outline"></ion-icon>
       <ion-label>Compras</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="customer" routerLink="/tuercas/customer/list"  *ngIf="userLoggedIn">
+    <ion-tab-button tab="customer" routerLink="/tuercas/customer/list"  *ngIf="currentUserService.isAdmin()">
       <ion-icon name="people-outline"></ion-icon>
       <ion-label>Clientes</ion-label>
     </ion-tab-button>
 
+    <ion-tab-button tab="users" routerLink="/tuercas/users/list"  *ngIf="currentUserService.isAdmin()">
+      <ion-icon name="business-outline"></ion-icon>
+      <ion-label>Usuarios</ion-label>
+    </ion-tab-button>
+    
   </ion-tab-bar>
 </ion-tabs>

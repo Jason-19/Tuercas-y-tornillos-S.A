@@ -15,7 +15,7 @@ public class CustomerService {
     private CustomerRepository Rep; 
 
     public List<CustomerModel> getAll(){
-        return Rep.findAll();
+        return Rep.getAllProducts();
     }
 
     public String insert_customer(@RequestBody CustomerModel customer){
@@ -29,5 +29,8 @@ public class CustomerService {
 
     public CustomerModel getbyId(Long id){
         return Rep.findById(id).orElse(null);
+    }
+    public void delete_customer (Long id){
+        Rep.deleteCustomer(id);
     }
 }

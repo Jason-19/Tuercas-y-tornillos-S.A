@@ -36,3 +36,4 @@ export class ProductsService {
     return this.http.post<Product[]>(`${environment.api}/supplier/all`, data);
 
 }
+}

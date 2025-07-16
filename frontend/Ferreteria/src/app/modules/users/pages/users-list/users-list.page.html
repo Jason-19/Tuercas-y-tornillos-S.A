@@ -1,0 +1,88 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gestión de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/tuercas/home"><ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+    <ion-breadcrumb href="tuercas/users/list">Usuarios</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <div class="row">
+
+    <div class="col-md-6 mb-4">
+      <h4 class="fw-bold mb-3">Registrar Usuario</h4>
+      <form [formGroup]="newUser">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" formControlName="name" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Correo</label>
+          <input type="email" class="form-control" formControlName="email" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" formControlName="username" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-control" formControlName="password" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rol</label>
+          <select class="form-select" formControlName="roleId">
+            <option *ngFor="let r of roles" [value]="r.id">{{ r.name }}</option>
+          </select>
+        </div>
+
+        <ion-button expand="block" color="primary" (click)="createUser()">
+          Guardar Usuario
+        </ion-button>
+      </form>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h4 class="fw-bold">Usuarios Registrados</h4>
+
+        <select class="form-select w-auto" [(ngModel)]="filtroRolId">
+          <option [ngValue]="null">Todos</option>
+          <option *ngFor="let r of roles" [ngValue]="r.id">{{ r.name }}</option>
+        </select>
+      </div>
+
+      <div style="max-height: 500px; overflow-y: auto;" class="border rounded p-2">
+        <ion-list *ngIf="usuariosFiltrados().length > 0; else noData">
+          <ion-item *ngFor="let u of usuariosFiltrados()">
+            <ion-avatar slot="start">
+              <ion-icon name="person-circle" style="font-size: 32px;"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h5 class="fw-bold">{{ u.username}}</h5>
+              <p>
+                <strong>Usuario:</strong> {{ u.username }}<br />
+                <strong>Email:</strong> {{ u.email }}
+              </p>
+            </ion-label>
+
+            <ion-badge color="tertiary" class="me-2">{{ u.role.name }}</ion-badge>
+          </ion-item>
+        </ion-list>
+
+        <ng-template #noData>
+          <div class="alert alert-secondary">No hay usuarios registrados.</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>

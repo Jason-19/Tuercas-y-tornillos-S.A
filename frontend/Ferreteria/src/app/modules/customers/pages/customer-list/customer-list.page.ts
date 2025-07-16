@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar,IonBreadcrumb, IonBreadcrumbs,IonIcon,IonBackButton, 
   IonButtons,IonList,IonItem,IonLabel,IonAvatar,IonButton } from '@ionic/angular/standalone';
 import { CustomerService } from '../../services/customer.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.page.html',
@@ -16,8 +16,8 @@ import { CustomerService } from '../../services/customer.service';
 export class CustomerListPage implements OnInit {
   customers: any = [];
   constructor(
-    private customerService: CustomerService
-
+    private customerService: CustomerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +29,9 @@ export class CustomerListPage implements OnInit {
       this.customers = data; 
     });
 
+  }
+  create(){
+    this.router.navigate(['/tuercas/customer/create']);
   }
   edit(customer: any) {}
   view(customer: any) {}

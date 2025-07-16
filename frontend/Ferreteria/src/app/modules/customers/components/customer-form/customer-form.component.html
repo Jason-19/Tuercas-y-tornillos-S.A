@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-breadcrumbs>
+    <ion-breadcrumb href="/tuercas/home"><ion-icon slot="start" name="home"></ion-icon>Home</ion-breadcrumb>
+    <ion-breadcrumb href="/tuercas/customer/list">Clientes</ion-breadcrumb>
+    <ion-breadcrumb href="/tuercas/customer/create">Create</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+
+  @if (success) {
+    <div class="alert alert-success d-flex align-items-center position-absolute top-0 end-0 m-4" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+        <use xlink:href="#check-circle-fill" />
+      </svg>
+      <div>Cliente registrado con éxito</div>
+    </div>
+  }
+
+  <div class="row p-4">
+
+    <div class="col-md-6 mb-4">
+      <h4 class="fw-bold mb-3">Nuevo Cliente</h4>
+      <form [formGroup]="newCliente">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" formControlName="first_name" placeholder="Ej. Elisa Lopez" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="cliente@correo.com" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Teléfono</label>
+          <input type="text" class="form-control" formControlName="phone" placeholder="Ej. 6123-4567" />
+        </div>
+
+        <ion-button expand="block" color="success" (click)="createCliente()" [disabled]="!newCliente.valid">
+          Guardar
+        </ion-button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h4 class="fw-bold mb-3">Clientes Registrados</h4>
+
+      <div style="max-height: 600px; overflow-y: auto;" class="border rounded p-2">
+        <ion-list *ngIf="customers.length > 0; else noData">
+          <ion-item *ngFor="let c of customers">
+            <ion-label>
+              <h5 class="fw-bold">{{ c.first_name }}</h5>
+              <p> {{ c.email }}<br>{{ c.phone }}</p>
+            </ion-label>
+            <ion-button slot="end" size="small" color="danger" (click)="deleteCustomer(c.id)">Eliminar</ion-button>
+          </ion-item>
+        </ion-list>
+
+        <ng-template #noData>
+          <div class="alert alert-secondary">No hay clientes registrados.</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ion-content>

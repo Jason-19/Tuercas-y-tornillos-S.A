@@ -52,4 +52,7 @@ export class InventarioListPage implements OnInit {
   productDetail(id: number) {
     this.router.navigate(['/tuercas/products/details', id]);
   }
+  createProvider() {
+    this.router.navigate(['/tuercas/supplier/create']);
+  }
 }

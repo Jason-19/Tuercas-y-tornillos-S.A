@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ferreteria.tuercasytornillos.model.SupplierModel;
 import com.ferreteria.tuercasytornillos.service.ProductsService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Tag(name = "Supplier", description = "Supplier endpoints")
 @RestController
@@ -23,4 +25,11 @@ public class SupplierController {
     public List<SupplierModel> getSupplierModels() {
         return productsService.getSupplier();
     }
+
+    @PostMapping("/add")
+    public SupplierModel addSupplier(@RequestBody SupplierModel supplier) {
+        return productsService.createSupplier(supplier);
+    }
+    
+
 }

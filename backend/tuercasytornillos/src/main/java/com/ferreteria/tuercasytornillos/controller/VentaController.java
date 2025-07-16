@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.ferreteria.tuercasytornillos.service.VentasService;
 import com.ferreteria.tuercasytornillos.model.VentaResumen;
+import com.ferreteria.tuercasytornillos.model.VentasDiariaHoy;
 import com.ferreteria.tuercasytornillos.model.VentasModel;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 @RestController
@@ -30,4 +33,9 @@ public class VentaController {
         return ventas;
     }
 
+    @PostMapping("/daily/report")
+    public VentasDiariaHoy obtenerReporteDiario() {
+        return ventaService.obtenerReporteDiario();
+    }
+    
 }

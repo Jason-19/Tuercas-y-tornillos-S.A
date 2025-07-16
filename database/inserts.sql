@@ -49,16 +49,16 @@ INSERT INTO TORNILLOS.Distrito (idDistrito, nombre, idProvincia) VALUES (12, 'Sa
 
 
 -- Cliente
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (1, 'Constructora Solís S.A.', '2222-5555', 'ventas@constructorasolis.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (2, 'Carpintería Madera Fina', '2233-4455', 'pedidos@maderafina.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (3, 'Electricidad Total', '2244-5566', 'compras@electricidadtotal.cr');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (4, 'Herrería El Yunque', '2255-6677', 'contacto@elyunque.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (5, 'Plomería Rápida', '2266-7788', 'info@plomeriarapida.cr');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (6, 'Decoraciones Hogar Feliz', '2277-8899', 'ventas@hogarfeliz.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (7, 'Ingeniería y Construcción CR', '2288-9900', 'proyectos@ingconcr.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (8, 'Taller Mecánico El Motor', '2299-0011', 'taller@elmotor.cr');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (9, 'Jardinería y Más', '2200-1122', 'jardineria@jardineriaymas.com');
-INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (10, 'María Fernández (Cliente frecuente)', '7010-2030', 'mariaf@gmail.com');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email,status) VALUES (1, 'Constructora Solís S.A.', '2222-5555', 'ventas@constructorasolis.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (2, 'Carpintería Madera Fina', '2233-4455', 'pedidos@maderafina.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (3, 'Electricidad Total', '2244-5566', 'compras@electricidadtotal.cr','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (4, 'Herrería El Yunque', '2255-6677', 'contacto@elyunque.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (5, 'Plomería Rápida', '2266-7788', 'info@plomeriarapida.cr','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (6, 'Decoraciones Hogar Feliz', '2277-8899', 'ventas@hogarfeliz.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (7, 'Ingeniería y Construcción CR', '2288-9900', 'proyectos@ingconcr.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (8, 'Taller Mecánico El Motor', '2299-0011', 'taller@elmotor.cr','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (9, 'Jardinería y Más', '2200-1122', 'jardineria@jardineriaymas.com','A');
+INSERT INTO TORNILLOS.Cliente (idCliente, nombre, telefono, email) VALUES (10, 'María Fernández (Cliente frecuente)', '7010-2030', 'mariaf@gmail.com','A');
 
 -- DireccionCliente
 INSERT INTO TORNILLOS.DireccionCliente (idDireccion, idCliente, descripcion, idDistrito, calle, referencia, codigoPostal) VALUES (1, 1, 'Oficinas centrales', 1, 'Av. Central, Calle 5', 'Frente al Banco Nacional', '10101');
@@ -77,16 +77,16 @@ INSERT INTO TORNILLOS.DireccionCliente (idDireccion, idCliente, descripcion, idD
 
 
 -- Proveedor
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (1, 'Aceros Industriales S.A.', 'Juan Pérez', 1);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (2, 'Tornillería Nacional', 'María Rodríguez', 2);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (3, 'Materiales Eléctricos Internacionales', 'Carlos Jiménez', 3);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (4, 'Ferretería Mayorista', 'Ana Gómez', 4);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (5, 'Plomería y Más', 'Luis Fernández', 5);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (6, 'Herramientas Profesionales', 'Sofía Chaves', 6);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (7, 'Pinturas y Barnices Costa Rica', 'Pedro Castro', 7);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (8, 'Maderas Preciosas S.A.', 'Laura Méndez', 8);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (9, 'Ferretería Industrial', 'Roberto Vargas', 9);
-INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion) VALUES (10, 'Equipos de Seguridad', 'Elena Ruiz', 10);
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (1, 'Aceros Industriales S.A.', 'Juan Pérez', 1, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (2, 'Tornillería Nacional', 'María Rodríguez', 2, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (3, 'Materiales Eléctricos Internacionales', 'Carlos Jiménez', 3, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (4, 'Ferretería Mayorista', 'Ana Gómez', 4, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (5, 'Plomería y Más', 'Luis Fernández', 5, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (6, 'Herramientas Profesionales', 'Sofía Chaves', 6, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (7, 'Pinturas y Barnices Costa Rica', 'Pedro Castro', 7, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (8, 'Maderas Preciosas S.A.', 'Laura Méndez', 8, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (9, 'Ferretería Industrial', 'Roberto Vargas', 9, '2266-7788');
+INSERT INTO TORNILLOS.Proveedor (idProveedor, nombre, contacto, idDireccion,phone) VALUES (10, 'Equipos de Seguridad', 'Elena Ruiz', 10);
 
 -- DireccionProveedor
 INSERT INTO TORNILLOS.DireccionProveedor (idDireccion, idProveedor, descripcion, idDistrito, calle, referencia, codigoPostal) VALUES (1, 1, 'Bodega principal', 1, 'Av. 3, Calle 10', 'Zona industrial', '10102');

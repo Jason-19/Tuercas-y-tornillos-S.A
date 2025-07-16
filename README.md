@@ -31,3 +31,5 @@ En resumen, el proyecto pretende modernizar la gestión de la ferretería, ofrec
 | **Reportes y Consultas**  | Generación de reportes dinámicos: ventas diarias/semanales/mensuales, productos más vendidos, niveles de stock, compras por período, ventas por cliente, etc., para apoyar la toma de decisiones y la planificación de compras. |
 | **Seguridad y Respaldo**  | Respaldo periódico de la base de datos, protección de la información ante fallos, restricciones de acceso por roles para evitar manipulaciones indebidas. |
 
+![Diagrama](/image/Diagrama%20del%20proyecto.png)
+![Data Model](/image/TORNILLOS.png)

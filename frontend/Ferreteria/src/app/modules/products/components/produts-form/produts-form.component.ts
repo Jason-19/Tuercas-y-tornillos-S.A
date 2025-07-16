@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, Validators,} from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBackButton, IonButtons,IonBreadcrumb, IonBreadcrumbs, IonIcon} from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-produts-form',
   templateUrl: './produts-form.component.html',
@@ -36,7 +37,8 @@ export class ProdutsFormComponent implements OnInit {
   
   constructor(
     private formBuilder: FormBuilder,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private router: Router
   ) {
     
     this.newProduct = this.formBuilder.group({
@@ -49,6 +51,8 @@ export class ProdutsFormComponent implements OnInit {
       idSubcategoria: ['', [Validators.required]],
       idMarca: ['', [Validators.required]],
       idUnidad: ['', [Validators.required]],
+      imageUrl: ['', [Validators.required]],
+      status: ['A', [Validators.required]]
 
     })
 
@@ -62,10 +66,11 @@ this.productsService.getProveedor({}).subscribe(data => {
 
   createProduct() {
     console.log(this.newProduct.value);
-    // this.productsService.createProduct(this.newProduct.value).subscribe();
+    this.productsService.createProduct(this.newProduct.value).subscribe();
     this.success = true
     setTimeout(() => {
       this.success = false
+      this.router.navigate(['/tuercas/products'])
     }, 3000);
   }
 

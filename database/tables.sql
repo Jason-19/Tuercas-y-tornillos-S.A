@@ -30,7 +30,8 @@ CREATE TABLE TORNILLOS.Cliente (
     idCliente NUMBER PRIMARY KEY,
     nombre VARCHAR2(100) NOT NULL,
     telefono VARCHAR2(20),
-    email VARCHAR2(100)
+    email VARCHAR2(100),
+    status CHAR(1) DEFAULT 'A'
 );
 
 CREATE TABLE TORNILLOS.DireccionCliente (
@@ -47,7 +48,8 @@ CREATE TABLE TORNILLOS.Proveedor (
     idProveedor NUMBER PRIMARY KEY,
     nombre VARCHAR2(100) NOT NULL,
     contacto VARCHAR2(100),
-    idDireccion NUMBER
+    idDireccion NUMBER,
+    phone VARCHAR2(20)
 );
 
 CREATE TABLE TORNILLOS.DireccionProveedor (
@@ -72,6 +74,7 @@ CREATE TABLE TORNILLOS.Usuario (
     email VARCHAR2(100),
     contrasena VARCHAR2(100)
 );
+ALTER TABLE USUARIO ADD USERNAME VARCHAR2(50);
 
 CREATE TABLE TORNILLOS.PermisoUsuario (
     idPermiso NUMBER PRIMARY KEY,
@@ -111,9 +114,11 @@ CREATE TABLE TORNILLOS.Producto (
     idCategoria NUMBER REFERENCES CategoriaProducto(idCategoria),
     idSubcategoria NUMBER REFERENCES SubcategoriaProducto(idSubcategoria),
     idMarca NUMBER REFERENCES MarcaProducto(idMarca),
-    idUnidad NUMBER REFERENCES UnidadMedida(idUnidad)
+    idUnidad NUMBER REFERENCES UnidadMedida(idUnidad),
+    image_url VARCHAR2(255),
+    status CHAR(1) DEFAULT 'A'
 );
-ALTER TABLE "PRODUCTO" ADD IMAGE_URL VARCHAR2(255);
+
 
 CREATE TABLE TORNILLOS.PrecioProducto (
     idPrecio NUMBER PRIMARY KEY,
@@ -370,3 +375,4 @@ CREATE TABLE TORNILLOS.TicketSoporte (
     estado VARCHAR2(50),
     fecha DATE
 );
+

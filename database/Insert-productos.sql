@@ -47,8 +47,8 @@ INSERT INTO TORNILLOS.UnidadMedida (idUnidad, nombre) VALUES (9, 'Pulgada');
 INSERT INTO TORNILLOS.UnidadMedida (idUnidad, nombre) VALUES (10, 'Pulgada cúbica');
 
 -- Producto
-INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad) 
-VALUES (1, 'Tornillo hexagonal 1/2"', 'Tornillo de acero galvanizado', 150, 500, 2, 10, 1, 1, 1);
+INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad,IMAGE_URL,STATUS) 
+VALUES (1, 'Tornillo hexagonal 1/2"', 'Tornillo de acero galvanizado', 150, 500, 2, 10, 1, 1, 1,'',);
 
 INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad) 
 VALUES (2, 'Tuerca hexagonal 1/2"', 'Tuerca de acero galvanizado', 50, 800, 2, 10, 2, 1, 1);
@@ -74,5 +74,7 @@ VALUES (8, 'Cemento gris 50kg', 'Cemento para construcción', 8500, 50, 5, 5, 8,
 INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad) 
 VALUES (9, 'Pintura látex blanco 1gal', 'Pintura para interiores', 12500, 60, 7, 6, 9, 6, 6);
 
+INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad) 
+VALUES (10, 'Guantes de cuero', 'Guantes de protección', 3500, 90, 10, 7, 10, 7, 1);
 INSERT INTO TORNILLOS.Producto (idProducto, nombre, descripcion, precioUnitario, cantidadStock, idProveedor, idCategoria, idSubcategoria, idMarca, idUnidad) 
 VALUES (10, 'Guantes de cuero', 'Guantes de protección', 3500, 90, 10, 7, 10, 7, 1);

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBreadcrumb, IonBreadcrumbs, IonIcon } from '@ionic/angular/standalone';
+import { CommonModule, NgIf } from '@angular/common';
+import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonBreadcrumb, IonBreadcrumbs, IonIcon,IonAlert } from '@ionic/angular/standalone';
 import { ProductsService } from '../../services/products.service';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.page.html',
@@ -21,6 +20,7 @@ import { ActivatedRoute } from '@angular/router';
     IonBreadcrumb,
     IonBreadcrumbs,
     IonIcon,
+    IonAlert,
     ReactiveFormsModule
   ]
 })
@@ -35,7 +35,8 @@ export class ProductsDetailsPage implements OnInit {
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.newProduct = this.fb.group({
       id: [null, [Validators.required]],
@@ -49,6 +50,7 @@ export class ProductsDetailsPage implements OnInit {
       idMarca: ['', [Validators.required]],
       idUnidad: ['', [Validators.required]],
       imageUrl: ['', [Validators.required]],
+      status: ['A', [Validators.required]]
     });
   }
 
@@ -79,30 +81,65 @@ export class ProductsDetailsPage implements OnInit {
         }
       });
     });
-  }
 
+  }
   editProduct() {
     this.enabled = false;
   }
-
   updateProduct() {
-    console.log(this.newProduct.value); // Verifica que se esté enviando el ID correctamente
-
-    this.productsService.update_product(this.newProduct.value).subscribe({
-      next: (data) => {
+    this.productsService.update_product(this.newProduct.value).subscribe(
+      (data) => {
+        this.enabled = true;
         this.message = 'Producto actualizado exitosamente';
         this.success = true;
-        this.enabled = true;
+
+        setTimeout(() => {
+          this.success = false;
+        }, 3000);
       },
-      error: (error) => {
+      (error) => {
         console.log(error);
         this.message = 'Error al actualizar el producto';
-        this.success = false;
-      }
-    });
+        this.success = true;
 
-    setTimeout(() => {
+
+      }
+
+    ); setTimeout(() => {
       this.success = false;
     }, 3000);
   }
+
+  // Eliminar Producto
+  deleteProduct() {
+    this.productsService.deleteProduct(this.id).subscribe({
+      next: (data) => {
+        this.success = true
+        this.message = 'Producto eliminado exitosamente';
+        setTimeout(() => {
+          this.router.navigate(['/tuercas/products']);  
+        }, 1500);
+      },
+      error: (error) => {
+        this.message = 'Error al eliminar el producto';
+      }
+    });
+  }
+
+   public alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+      },
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        this.deleteProduct();
+      },
+    },
+  ];
+
 }

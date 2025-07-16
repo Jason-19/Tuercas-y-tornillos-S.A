@@ -10,11 +10,10 @@ import { Product } from '../models/producto.model';
 export class ProductsService {
 
     private apiURL = `${environment.api}/products`;
-    // http://localhost:8080/products/find
   constructor(private http: HttpClient) {
   }
 
- 
+ // products
   getProducts(data: any) : Observable<Product[]> {
     return this.http.post<Product[]>(`${this.apiURL}/all`, data);
   }
@@ -22,14 +21,19 @@ export class ProductsService {
     return this.http.post<Product>(`${this.apiURL}/add`, data);
   }
 
-  getProveedor(data: any) : Observable<Product[]> {
-    return this.http.post<Product[]>(`${environment.api}/supplier/all`, data);
+  update_product(data: any) : Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/update`,data);
   }
   detailProduct(data: any) : Observable<Product> {
     return this.http.post<any>(`${this.apiURL}/find`,data);
   }
-
-  update_product(data: any) : Observable<any> {
-    return this.http.put<any>(`${this.apiURL}/update`,data);
+  deleteProduct(id: any) : Observable<any> {
+    return this.http.post<any>(`${this.apiURL}/delete/:id?id=${id}`, id);
   }
+
+  // proveedores
+  getProveedor(data: any) : Observable<Product[]> {
+    return this.http.post<Product[]>(`${environment.api}/supplier/all`, data);
+
+}
 }

@@ -36,7 +36,9 @@ export class HomePage implements OnInit {
   }
   logout() {
     this.currentUserService.logout();
-    this.router.navigate(['/']);
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 2000);
   }
   reportes() {
     this.presentToast('Proximamente', 2000, 'top', 'danger');

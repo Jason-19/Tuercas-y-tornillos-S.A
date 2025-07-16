@@ -19,7 +19,7 @@ public interface VentaRepository extends JpaRepository<VentasModel, Long> {
             "c.NOMBRE AS CLIENTE, " +
             "v.TOTAL AS TOTAL, " +
             "u.NOMBRE AS VENDEDOR, " +
-            "COALESCE(m.NOMBRE, 'No pagado') AS METODOPAGO " +
+            "m.NOMBRE AS METODOPAGO " +
             "FROM TORNILLOS.VENTA v " +
             "JOIN TORNILLOS.CLIENTE c ON v.IDCLIENTE = c.IDCLIENTE " +
             "JOIN TORNILLOS.USUARIO u ON v.IDUSUARIO = u.IDUSUARIO " +
@@ -27,10 +27,7 @@ public interface VentaRepository extends JpaRepository<VentasModel, Long> {
             "    SELECT p.IDVENTA, MIN(p.IDPAGO) AS PRIMERPAGO " +
             "    FROM TORNILLOS.PAGOVENTA p " +
             "    GROUP BY p.IDVENTA " +
-            ") pp ON v.IDVENTA = pp.IDVENTA " +
-            "LEFT JOIN TORNILLOS.PAGOVENTA p ON pp.PRIMERPAGO = p.IDPAGO " +
-            "LEFT JOIN TORNILLOS.METODOPAGO m ON p.IDMETODOPAGO = m.IDMETODO " +
-            "ORDER BY v.FECHA DESC", nativeQuery = true)
+            ") pp ON v.IDVENTA = pp.IDVENTA ",nativeQuery = true)
     List<VentaResumen> findAllVentasResumen();
 
     @Query(value = "SELECT SUM(v.TOTAL) AS TOTAL " +
@@ -41,9 +38,7 @@ public interface VentaRepository extends JpaRepository<VentasModel, Long> {
             "    SELECT p.IDVENTA, MIN(p.IDPAGO) AS PRIMERPAGO " +
             "    FROM TORNILLOS.PAGOVENTA p " +
             "    GROUP BY p.IDVENTA " +
-            ") pp ON v.IDVENTA = pp.IDVENTA " +
-            "LEFT JOIN TORNILLOS.PAGOVENTA p ON pp.PRIMERPAGO = p.IDPAGO " +
-            "LEFT JOIN TORNILLOS.METODOPAGO m ON p.IDMETODOPAGO = m.IDMETODO " +
-            "ORDER BY v.FECHA DESC", nativeQuery = true)
+            ") pp ON v.IDVENTA = pp.IDVENTA "
+            , nativeQuery = true)
     VentasDiariaHoy obtenerReporteDiario();
 }

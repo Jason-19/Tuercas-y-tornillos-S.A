@@ -114,10 +114,11 @@ CREATE TABLE TORNILLOS.Producto (
     idCategoria NUMBER REFERENCES CategoriaProducto(idCategoria),
     idSubcategoria NUMBER REFERENCES SubcategoriaProducto(idSubcategoria),
     idMarca NUMBER REFERENCES MarcaProducto(idMarca),
-    idUnidad NUMBER REFERENCES UnidadMedida(idUnidad)
+    idUnidad NUMBER REFERENCES UnidadMedida(idUnidad),
+    image_url VARCHAR2(255),
+    status CHAR(1) DEFAULT 'A'
 );
-ALTER TABLE "PRODUCTO" ADD IMAGE_URL VARCHAR2(255);
-ALTER TABLE "PRODUCTO" ADD STATUS CHAR(1) DEFAULT 'A';
+
 
 CREATE TABLE TORNILLOS.PrecioProducto (
     idPrecio NUMBER PRIMARY KEY,
